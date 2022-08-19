@@ -7,6 +7,9 @@
     <!-- Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- My CSS -->
 
     <link rel="stylesheet" href="style.css" />
@@ -46,7 +49,7 @@
     <section class="jumbotron text-center">
       <img src="img/bocil.jpeg" alt="Dori Ikan" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Dori Ikan</h1>
-      <p class="lead">A Kid | 2 Years Old</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -66,10 +69,10 @@
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-right">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis aliquam sequi ipsa ut ea recusandae dolorum! Quisquam neque enim dignissimos.</p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-left" data-aos-delay= "100">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex at eum ipsa debitis fuga magni, adipisci possimus voluptates incidunt neque nemo odio praesentium molestiae excepturi.</p>
           </div>
         </div>
@@ -94,7 +97,7 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="zoom-out-down " data-aos-duration="1000">
                 <img src="img/projects/1.jpg" class="card-img-top" alt="Project 1">
                 <div class="card-body">
                   <p class="card-text">Bermain mainan</p>
@@ -102,7 +105,7 @@
               </div>
               </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="zoom-out-down" data-aos-delay= "100" data-aos-duration="1000">
                 <img src="img/projects/2.jpg" class="card-img-top" alt="Project 2">
                 <div class="card-body">
                   <p class="card-text">Memotret kamu yang lucu</p>
@@ -110,7 +113,7 @@
               </div>
               </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="zoom-out-down" data-aos-delay= "200" data-aos-duration="1000">
                 <img src="img/projects/3.jpg" class="card-img-top" alt="Project 3">
                 <div class="card-body">
                   <p class="card-text">Melukis pemandangan rumah kita</p>
@@ -118,7 +121,7 @@
               </div>
               </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="zoom-out-down" data-aos-delay= "300" data-aos-duration="1000">
                 <img src="img/projects/4.jpg" class="card-img-top" alt="Project 4">
                 <div class="card-body">
                   <p class="card-text">Memecahkan puzzle</p>
@@ -126,7 +129,7 @@
               </div>
               </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="zoom-out-down" data-aos-delay= "400"data-aos-duration="1000">
                 <img src="img/projects/5.jpg" class="card-img-top" alt="Project 5">
                 <div class="card-body">
                   <p class="card-text">Menari bersama kamu</p>
@@ -189,9 +192,28 @@
     <footer class="bg-danger text-center text-white pb-5">
         <p>Created by <i class="bi bi-suit-heart-fill text-white"> by Dori's Mom <a href="instagram.com/intanzaaa" class="text-white fw-bold">Intan Zaa</a></p>
     </footer>
+    
     <!-- footer end -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 2000,
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/TextPlugin.min.js"></script>
+
+    <script>
+    gsap.registerPlugin(TextPlugin);
+    gsap.to('.lead', {duration: 1.2, delay: 1.5, text: 'A Kid | 2 Years Old'});
+    gsap.from('.jumbotron img', {duration: 1, y: -100, opacity: 0});
+    gsap.from('.navbar', {duration: 1.5, y: '-100%', opacity: 0, ease: 'bounce'});
+    gsap.from('.display-4', {duration: 1, x: -50, opacity: 0, delay: 0.5});
+    </script>
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbx9A5Cta5BCdDTAIQi8y73uMjk06_lAK8J0lPWQKsq_g56uXeTeC71hc31_N1IknaGW/exec'
       const form = document.forms['nino-contact-form']
